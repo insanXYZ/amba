@@ -1,5 +1,5 @@
+https://github.com/insanXYZ/amba/assets/128870987/a02ada1c-e673-4c60-bb4e-c808a9c10edb
 
-https://github.com/insanXYZ/amba/assets/128870987/00037367-45a1-4ce4-acf3-dd0da5f43fdd
 
 Amba, A Terminal Tool Built with Go for Converting Image Formats (PNG, JPG, JPEG, WEBP)
 
