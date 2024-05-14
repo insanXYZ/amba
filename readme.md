@@ -5,7 +5,7 @@ Amba, A Terminal Tool Built with Go for Converting Image Formats (PNG, JPG, JPEG
 
 # Usage
 ```sh
-amba --file <filename> --to <format(use comma(,) if you want convert to many format)>
+amba --file <filename> --to <format1,format2,...>
 ```
 
 # Requirements
