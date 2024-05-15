@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"github.com/kolesa-team/go-webp/decoder"
 	"github.com/kolesa-team/go-webp/webp"
+	"golang.org/x/image/bmp"
 	"image"
 	"image/jpeg"
 	"image/png"
@@ -16,7 +17,7 @@ import (
 	"strings"
 )
 
-var formatSupported = []string{"jpg", "jpeg", "png", "webp"}
+var formatSupported = []string{"jpg", "jpeg", "png", "webp", "bmp"}
 
 type DecodeFunc func(io.Reader) (image.Image, error)
 
@@ -67,6 +68,8 @@ func main() {
 			panic(err.Error())
 		}
 		decode = dec
+	case "image/bmp":
+		decode = Decode(byteFile, bmp.Decode)
 	default:
 		panic("unknown image type")
 	}
@@ -92,6 +95,11 @@ func main() {
 				}
 			case "webp":
 				err := webp.Encode(buf, decode, nil)
+				if err != nil {
+					panic("cant encode image")
+				}
+			case "bmp":
+				err := bmp.Encode(buf, decode)
 				if err != nil {
 					panic("cant encode image")
 				}
